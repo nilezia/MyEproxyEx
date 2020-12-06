@@ -7,38 +7,35 @@ import com.airbnb.epoxy.EpoxyAttribute
 import com.airbnb.epoxy.EpoxyModelClass
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.nilezia.myeproxy.R
+import com.nilezia.myeproxy.data.AdsBannerModel
 import com.nilezia.myeproxy.data.AnimeModel
 import com.nilezia.myeproxy.epoxy.KotlinEpoxyHolder
 
-@EpoxyModelClass(layout = R.layout.view_item_new_anime)
-abstract class AnimeViewEpoxy : EpoxyModelWithHolder<Holder>() {
+@EpoxyModelClass(layout = R.layout.view_item_square)
+abstract class AnimSquareEpoxy : EpoxyModelWithHolder<AnimSquareEpoxy.Holder>() {
 
     @EpoxyAttribute
-    lateinit var anime: AnimeModel
+    lateinit var anime: AdsBannerModel
 
-    var onclick: ((AnimeModel) -> Unit?)? = null
+    var onclick: ((AdsBannerModel) -> Unit?)? = null
     override fun bind(holder: Holder) = with(holder) {
-        thumbImageView.setImageDrawable(
+        imageViewSquarer.setImageDrawable(
 
             getView().context.let {
                 ContextCompat.getDrawable(
                     it,
-                    anime.imgPoster
+                    anime.imgRes
                 )
             }
         )
-
-        holder.titleTextView.text = anime.titleName
-
         getView().setOnClickListener {
             onclick?.invoke(anime)
         }
+    }
+
+    inner class Holder : KotlinEpoxyHolder() {
+        val imageViewSquarer by bind<ImageView>(R.id.imageViewSquarer)
 
     }
 }
 
-class Holder : KotlinEpoxyHolder() {
-    val thumbImageView by bind<ImageView>(R.id.thumbImageView)
-    val titleTextView by bind<TextView>(R.id.titleNameTextView)
-
-}

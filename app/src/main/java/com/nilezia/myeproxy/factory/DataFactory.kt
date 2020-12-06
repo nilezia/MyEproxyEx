@@ -21,10 +21,23 @@ object DataFactory {
         AnimeModel("002", R.drawable.hunter, "hunter x hunter", "Ninja Story in the world", ""),
         AnimeModel("003", R.drawable.hunter, "hunter x hunter", "Ninja Story in the world", ""),
         AnimeModel("004", R.drawable.hunter, "hunter x hunter", "Ninja Story in the world", ""),
-        AnimeModel("005", R.drawable.hunter,"hunter x hunter", "Ninja Story in the world", ""),
-        AnimeModel("006", R.drawable.hunter,"hunter x hunter", "Ninja Story in the world", ""),
+        AnimeModel("005", R.drawable.hunter, "hunter x hunter", "Ninja Story in the world", ""),
+        AnimeModel("006", R.drawable.hunter, "hunter x hunter", "Ninja Story in the world", ""),
         AnimeModel("007", R.drawable.hunter, "hunter x hunter", "Ninja Story in the world", ""),
         AnimeModel("008", R.drawable.hunter, "hunter x hunter", "Ninja Story in the world", "")
+    )
+
+    fun getSquareAnime() = listOf(
+        AdsBannerModel("001", R.drawable.slamdunk_square),
+        AdsBannerModel("002", R.drawable.slamdunk_square),
+        AdsBannerModel("003", R.drawable.slamdunk_square),
+        AdsBannerModel("004", R.drawable.slamdunk_square),
+        AdsBannerModel("005", R.drawable.slamdunk_square),
+        AdsBannerModel("006", R.drawable.slamdunk_square),
+        AdsBannerModel("007", R.drawable.slamdunk_square),
+        AdsBannerModel("008", R.drawable.slamdunk_square),
+        AdsBannerModel("009", R.drawable.slamdunk_square),
+        AdsBannerModel("010", R.drawable.slamdunk_square)
     )
 
     fun getAdsBanner() = listOf(
