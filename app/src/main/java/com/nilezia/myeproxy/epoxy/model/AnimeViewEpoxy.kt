@@ -11,7 +11,7 @@ import com.nilezia.myeproxy.data.AnimeModel
 import com.nilezia.myeproxy.epoxy.KotlinEpoxyHolder
 
 @EpoxyModelClass(layout = R.layout.view_item_new_anime)
-abstract class AnimeViewEpoxy : EpoxyModelWithHolder<Holder>() {
+abstract class AnimeViewEpoxy : EpoxyModelWithHolder<AnimeViewEpoxy.Holder>() {
 
     @EpoxyAttribute
     lateinit var anime: AnimeModel
@@ -35,10 +35,10 @@ abstract class AnimeViewEpoxy : EpoxyModelWithHolder<Holder>() {
         }
 
     }
+  inner  class Holder : KotlinEpoxyHolder() {
+        val thumbImageView by bind<ImageView>(R.id.thumbImageView)
+        val titleTextView by bind<TextView>(R.id.titleNameTextView)
+
+    }
 }
 
-class Holder : KotlinEpoxyHolder() {
-    val thumbImageView by bind<ImageView>(R.id.thumbImageView)
-    val titleTextView by bind<TextView>(R.id.titleNameTextView)
-
-}
